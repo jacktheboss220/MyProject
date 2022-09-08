@@ -1,0 +1,21 @@
+<div class="d-grid gap-3 p-5">
+    <div class="input-group flex-nowrap">
+        <input id="getUrl" type="text" class="form-control" placeholder="Enter youtube link..." aria-label="Username"
+            aria-describedby="addon-wrapping">
+    </div>
+    <div class="mx-auto gap-2 d-md-block">
+        <button id="submit" class="btn btn-primary btn-sm me-1">Submit</button>
+        <button id="reset" class="btn btn-primary btn-sm ms-1">Reset</button>
+    </div>
+</div>
+
+<script>
+    document.getElementById('submit').addEventListener('click', function () {
+        let dataFromUrl = document.getElementById('getUrl').value;
+        document.location.href = "/youtube/submit?q=" + dataFromUrl;
+    })
+
+    document.getElementById('reset').addEventListener('click', function () {
+        document.getElementById('getUrl').value = '';
+    })
+</script>
