@@ -15,6 +15,7 @@ youtube.get('/submit', (req, res) => {
     const ytUrl = "https://social-downloader-i01.herokuapp.com/api/youtube";
     (async () => {
         try {
+            let video, audio;
             const resV = await axios.get(ytUrl + "/video?" + querystring.stringify(qua));
             const resA = await axios.get(ytUrl + "/audio?" + querystring.stringify(qua));
             let YTtitle = resV.data.body.meta.title;
@@ -55,7 +56,8 @@ youtube.get('/submit', (req, res) => {
                 video: video,
                 audio: audio
             })
-        } catch {
+        } catch (err) {
+            console.log(err);
             // return -1;
             res.send("error")
         }
