@@ -1,0 +1,49 @@
+<div class="container text-center pt-5">
+    <div class="fs-2 font-monospace" style="color: white;">
+        Website Create to download Media form different plateforms like Instagram, Twitter, Facebook, Reddit
+    </div>
+    <div class="align-items-center mb-3 d-flex justify-content-evenly gap-2 mt-5" id="test">
+        <div class="card mb-1" style="width: 12rem;">
+            <img src="https://github.com/jacktheboss220.png?size=460" class="card-img-top" alt="error">
+            <div class="card-body">
+                <h5 class="card-title">jacktheboss220</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card mb-1" style="width: 12rem;">
+            <img src="https://github.com/xRaidenxx.png?size=460" class="card-img-top" alt="error">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card mb-1" style="width: 12rem;">
+            <img src="https://github.com/Shreeyaaah.png?size=460" class="card-img-top" alt="error">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    setInterval(function () {
+        let width = screen.width;
+        if (width <= 500) {
+            document.getElementById('test').classList.add('flex-column');
+            document.getElementById('test').classList.remove('flex-row');
+        } else {
+            document.getElementById('test').classList.remove('flex-column');
+            document.getElementById('test').classList.add('flex-row');
+        }
+    }, 10)
+</script>
