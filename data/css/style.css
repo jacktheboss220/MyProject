@@ -13,3 +13,18 @@ body {
         width: 150px;
     }
 }
+
+@keyframes card-hover {
+    from {
+        height: 170px;
+    }
+
+    to {
+        height: 180px;
+    }
+}
+
+.min-scale:hover {
+    transition: all .2s;
+    scale: 1.1;
+}
