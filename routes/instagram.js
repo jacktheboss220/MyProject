@@ -2,16 +2,16 @@ const express = require('express')
 const insta = express.Router();
 const path = require('path')
 //-------------------------------------------------------------------------------------------------------------//
-insta.get('/', (req, res) => {
-    res.send("tyes")
-})
-//-------------------------------------------------------------------------------------------------------------//
 insta.get('/reels', (req, res) => {
-    res.render("instagram")
+    res.render("instagram", {
+        reels: true
+    })
 })
 //-------------------------------------------------------------------------------------------------------------//
 insta.get('/profile-picture', (req, res) => {
-    res.send("Adding Soon....")
+    res.render("instagram", {
+        reels: false
+    })
 })
 module.exports = insta;
 //-------------------------------------------------------------------------------------------------------------//

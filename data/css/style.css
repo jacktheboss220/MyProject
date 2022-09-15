@@ -1,5 +1,11 @@
 body {
-    background: linear-gradient(90deg, rgb(0, 1, 5, 2) 5%, rgb(32, 30, 133) 35%, rgb(194, 103, 43) 100%);
+    background: linear-gradient(172deg, black 10%, #5A184E, #A23756, #DA6C53, #F8AF53);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nav-link {
+    color: white;
 }
 
 .img {
@@ -7,24 +13,29 @@ body {
     width: 170px;
 }
 
-@media screen and (max-width:320px) {
+.page {
+    margin: auto;
+    margin-top: 5rem;
+    width: 85%;
+    height: calc(90vh - 56px - 40px);
+}
+
+@media screen and (max-width:500px) {
     .img {
         height: 150px;
         width: 150px;
     }
-}
 
-@keyframes card-hover {
-    from {
-        height: 170px;
-    }
-
-    to {
-        height: 180px;
+    .page {
+        width: 100%;
     }
 }
 
 .min-scale:hover {
     transition: all .2s;
     scale: 1.1;
+}
+
+a:hover {
+    color: white !important;
 }
