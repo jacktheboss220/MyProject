@@ -4,7 +4,8 @@
   "description": "sem 5 minor project",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "node index.js",
+    "start": "node index.js"
   },
   "author": "mahesh & ayush & shreeya",
   "license": "ISC",

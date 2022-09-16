@@ -1,0 +1,14 @@
+{
+    "name": "minor-project-sam",
+    "description": "",
+    "logo": "https://i.ibb.co/YkhKMx4/pngtree-neon-welcome-logo-png-image-3782592.jpg",
+    "repository": "https://github.com/jacktheboss220/MyProject",
+    "addons": [
+        {
+            "plan": "heroku-postgresql",
+            "options": {
+                "version": "13"
+            }
+        }
+    ]
+}
