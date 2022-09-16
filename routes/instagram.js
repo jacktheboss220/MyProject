@@ -30,6 +30,7 @@ insta.get('/reels/submit', (req, res) => {
         urlInsta.includes("instagram.com/reel/") ||
         urlInsta.includes("instagram.com/tv/")))
         return res.render("error", {
+            text: "Provide Instagram Url Only.",
             insta: true,
             youtube: false,
             twitter: false
@@ -38,18 +39,30 @@ insta.get('/reels/submit', (req, res) => {
         urlInsta = urlInsta.split("/?")[0];
     ig.fetchPost(urlInsta).then(async (r) => {
         for (let i = 0; i < r.media_count; i++) {
-            const p = path.resolve(__dirname, '../data/images', r.links[i].id + ".jpg")
-            const writer = fs.createWriteStream(p)
-            const response = await axios({
-                url: r.links[i].url,
-                method: 'GET',
-                responseType: 'stream'
-            })
-            response.data.pipe(writer)
-            dd.push(r.links[i].id)
+            if (r.links[i].type == "image") {
+                const p = path.resolve(__dirname, '../data/images', r.links[i].id + ".jpg")
+                const writer = fs.createWriteStream(p)
+                const response = await axios({
+                    url: r.links[i].url,
+                    method: 'GET',
+                    responseType: 'stream'
+                })
+                response.data.pipe(writer)
+                dd.push({ image: r.links[i].id + '.jpg' })
+            }
+            if (r.links[i].type == "video") {
+                const p = path.resolve(__dirname, '../data/images', r.links[i].id + ".mp4")
+                const writer = fs.createWriteStream(p)
+                const response = await axios({
+                    url: r.links[i].url,
+                    method: 'GET',
+                    responseType: 'stream'
+                })
+                response.data.pipe(writer)
+                dd.push({ video: r.links[i].id + '.mp4' })
+            }
         }
         res.render('instaRender', {
-            title: r.caption,
             url: dd,
             media: r.media_count
         })

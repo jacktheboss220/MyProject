@@ -1,19 +1,17 @@
-<section class="thisOnly" style="height: calc(100vh - 56px - 40px);">
+<section class="page" style="height: calc(100vh - 56px - 40px);">
     <div class="container grid">
         <div class="content">
             {{#each url}}
             <div class="image d-grid gap-2 mx-auto">
-                <img src="../../data/images/{{this}}.jpg" alt="error">
-                <a class="btn btn-primary justify-content-md" href="/download/{{this}}.jpg">Download</a>
+                {{#if this.image}}
+                <img src="../../data/images/{{this.image}}" alt="error">
+                <a class="btn btn-primary justify-content-md" href="/download/{{this.image}}">Download</a>
+                {{else}}
+                <video src="../../data/images/{{this.video}}" controls></video>
+                <a class="btn btn-primary justify-content-md" href="/download/{{this.video}}">Download</a>
+                {{/if}}
             </div>
             {{/each}}
         </div>
     </div>
 </section>
-<style>
-    @media (max-width:500px) {
-        .thisOnly {
-            height: auto !important;
-        }
-    }
-</style>
