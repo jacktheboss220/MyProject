@@ -20,7 +20,13 @@ app.get('/about', (req, res) => {
 })
 //-------------------------------------------------------------------------------------------------------------//
 app.get('/data/images/:img', (req, res) => {
+    console.log(req.params.img);
     res.sendFile(path.join(__dirname, "./data/images/" + req.params.img))
+})
+//-------------------------------------------------------------------------------------------------------------//
+app.get('/download/:img', (req, res) => {
+    console.log(req.params.img);
+    res.download(path.join(__dirname, "./data/images/" + req.params.img))
 })
 //-------------------------------------------------------------------------------------------------------------//
 app.get('/data/css/:css', (req, res) => {
@@ -31,7 +37,7 @@ app.get('/data/favicon_io/:fav', (req, res) => {
     res.sendFile(path.join(__dirname, "./data/favicon_io/" + req.params.fav))
 })
 //-------------------------------------------------------------------------------------------------------------//
-app.use('/instagram', require(path.join(__dirname, "/routes/instagram.js")));
+app.use('/instagram', require(path.join(__dirname, "./routes/instagram.js")));
 //-------------------------------------------------------------------------------------------------------------//
 app.use('/youtube', require(path.join(__dirname, "./routes/youtube.js")));
 //-------------------------------------------------------------------------------------------------------------//
