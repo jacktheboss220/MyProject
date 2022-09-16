@@ -62,13 +62,6 @@ a:hover {
     object-fit: cover;
 }
 
-.profile img {
-    display: block;
-    margin: auto;
-    height: 40vh;
-    object-fit: cover;
-}
-
 .image video {
     display: block;
     width: 250px;
