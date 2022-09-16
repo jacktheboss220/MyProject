@@ -31,9 +31,6 @@ insta.get('/reels/submit', (req, res) => {
         urlInsta.includes("instagram.com/tv/")))
         return res.render("error", {
             text: "Provide Instagram Url Only.",
-            insta: true,
-            youtube: false,
-            twitter: false
         })
     if (urlInsta.includes("?"))
         urlInsta = urlInsta.split("/?")[0];
@@ -63,10 +60,33 @@ insta.get('/reels/submit', (req, res) => {
             }
         }
         res.render('instaRender', {
-            url: dd,
-            media: r.media_count
+            reels: true,
+            url: dd
         })
     })
+})
+//-------------------------------------------------------------------------------------------------------------//
+insta.get('/profile-picture/submit', (req, res) => {
+    let user = req.query.q;
+    if (user == '') {
+        return res.render("error", {
+            text: "Provide Instagram Url Only.",
+        })
+    }
+    ig.fetchUser(user).then(async (r) => {
+        const p = path.resolve(__dirname, '../data/images', r.id + ".jpg")
+        const writer = fs.createWriteStream(p)
+        const response = await axios({
+            url: r.hd_profile_pic_url_info.url,
+            method: 'GET',
+            responseType: 'stream'
+        })
+        response.data.pipe(writer);
+        res.render('instaRender', {
+            profileUrl: r.id + ".jpg",
+            username: r.fullname
+        })
+    });
 })
 module.exports = insta;
 //-------------------------------------------------------------------------------------------------------------//

@@ -1,5 +1,6 @@
 <section class="page" style="height: calc(100vh - 56px - 40px);">
     <div class="container grid">
+        {{#if reels}}
         <div class="content">
             {{#each url}}
             <div class="image d-grid gap-2 mx-auto">
@@ -13,5 +14,14 @@
             </div>
             {{/each}}
         </div>
+        {{else}}
+        <div class="content">
+            <div class="profile d-grid gap-2 mx-auto">
+                <img src="../../data/images/{{profileUrl}}" class="img-fluid" alt="Error">
+                <p class="text-center" style="color: white;">{{username}}</p>
+                <a class="btn btn-primary justify-content-md" href="/download/{{profileUrl}}">Download</a>
+            </div>
+        </div>
+        {{/if}}
     </div>
 </section>
