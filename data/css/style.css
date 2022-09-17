@@ -1,7 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
 body {
-    background: linear-gradient(172deg, black 10%, #5A184E, #A23756, #DA6C53, #F8AF53);
+    height: auto;
+}
+
+body::before {
+    background: linear-gradient(172deg, #000000 10%, #5A184E, #A23756, #DA6C53, #F8AF53);
     background-repeat: no-repeat;
     background-size: cover;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    content: "";
+    z-index: -1;
 }
 
 .nav-link {
