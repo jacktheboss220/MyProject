@@ -45,6 +45,11 @@
 
  .container {
      height: 100%;
+     border: 5px solid green;
+ }
+
+ #mainbg {
+     height: 350px;
  }
 
  .container #getUrl {
@@ -116,9 +121,8 @@
          height: auto;
      }
 
-     /* .footer {
-         position: absolute;
-         bottom: 0;
-         width: 100%;
-     } */
+     #mainbg {
+        height: 70vh;
+         background-position: center center;
+     }
  }
