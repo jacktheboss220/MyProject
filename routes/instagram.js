@@ -1,4 +1,3 @@
-
 const express = require('express')
 const insta = express.Router();
 const path = require('path')
@@ -70,7 +69,7 @@ insta.get('/profile-picture/submit', (req, res) => {
     let user = req.query.q;
     if (user == '') {
         return res.render("error", {
-            text: "Provide Instagram Url Only.",
+            text: "Provide Instagram Username.",
         })
     }
     ig.fetchUser(user).then(async (r) => {
@@ -85,6 +84,10 @@ insta.get('/profile-picture/submit', (req, res) => {
         res.render('instaRender', {
             profileUrl: r.id + ".jpg",
             username: r.fullname
+        })
+    }).catch(err => {
+        return res.render("error", {
+            text: "Username not Found / Internal Error"
         })
     });
 })

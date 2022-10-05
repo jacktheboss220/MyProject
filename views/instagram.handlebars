@@ -1,46 +1,48 @@
-<section class="page">
-    {{#if reels}}
-    <div class="d-grid gap-3 p-5">
-        <div class="input-group flex-nowrap">
-            <input id="getUrl" type="text" class="form-control" placeholder="Enter insta post,reels or Igtv link..."
-                aria-describedby="addon-wrapping">
+<div class="container">
+    <div class="instagram">
+        {{#if reels}}
+        <div class="d-grid gap-3">
+            <div class="input-group flex-nowrap">
+                <input id="getUrl" type="text" class="form-control" placeholder="Enter insta post,reels or Igtv link..."
+                    aria-describedby="addon-wrapping">
+            </div>
+            <div class="mx-auto gap-2 d-md-block">
+                <button id="submit" class="btn btn-primary btn me-1">Submit</button>
+                <button id="reset" class="btn btn-primary btn ms-1">Reset</button>
+            </div>
         </div>
-        <div class="mx-auto gap-2 d-md-block">
-            <button id="submit" class="btn btn-primary btn me-1">Submit</button>
-            <button id="reset" class="btn btn-primary btn ms-1">Reset</button>
-        </div>
-    </div>
-    <script>
-        document.getElementById('submit').addEventListener('click', function () {
-            let dataFromUrl = document.getElementById('getUrl').value;
-            document.location.href = "/instagram/reels/submit?q=" + dataFromUrl;
-        })
+        <script>
+            document.getElementById('submit').addEventListener('click', function () {
+                let dataFromUrl = document.getElementById('getUrl').value;
+                document.location.href = "/instagram/reels/submit?q=" + dataFromUrl;
+            })
 
-        document.getElementById('reset').addEventListener('click', function () {
-            document.getElementById('getUrl').value = '';
-        })
-    </script>
-    {{else}}
-    <div class="d-grid gap-3 p-5">
-        <div class="input-group flex-nowrap">
-            <span class="input-group-text" id="addon-wrapping">@</span>
-            <input type="text" class="form-control" id="getUrl" placeholder="Username" aria-label="Username"
-                aria-describedby="addon-wrapping">
+            document.getElementById('reset').addEventListener('click', function () {
+                document.getElementById('getUrl').value = '';
+            })
+        </script>
+        {{else}}
+        <div class="d-grid gap-3">
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" style="color:black !important" id="addon-wrapping">@</span>
+                <input type="text" class="form-control" id="getUrl" placeholder="Username" aria-label="Username"
+                    aria-describedby="addon-wrapping">
+            </div>
+            <div class="mx-auto gap-2 d-md-block">
+                <button id="submit" class="btn btn-primary btn me-1">Submit</button>
+                <button id="reset" class="btn btn-primary btn ms-1">Reset</button>
+            </div>
         </div>
-        <div class="mx-auto gap-2 d-md-block">
-            <button id="submit" class="btn btn-primary btn me-1">Submit</button>
-            <button id="reset" class="btn btn-primary btn ms-1">Reset</button>
-        </div>
-    </div>
-    <script>
-        document.getElementById('submit').addEventListener('click', function () {
-            let dataFromUrl = document.getElementById('getUrl').value;
-            document.location.href = "/instagram/profile-picture/submit?q=" + dataFromUrl;
-        })
+        <script>
+            document.getElementById('submit').addEventListener('click', function () {
+                let dataFromUrl = document.getElementById('getUrl').value;
+                document.location.href = "/instagram/profile-picture/submit?q=" + dataFromUrl;
+            })
 
-        document.getElementById('reset').addEventListener('click', function () {
-            document.getElementById('getUrl').value = '';
-        })
-    </script>
-    {{/if}}
-</section>
+            document.getElementById('reset').addEventListener('click', function () {
+                document.getElementById('getUrl').value = '';
+            })
+        </script>
+        {{/if}}
+    </div>
+</div>

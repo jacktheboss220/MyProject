@@ -18,6 +18,9 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about')
 })
+app.get('/error', (req, res) => {
+    res.render('error')
+})
 //-------------------------------------------------------------------------------------------------------------//
 app.get('/data/images/:img', (req, res) => {
     console.log(req.params.img);

@@ -1,9 +1,10 @@
-<section class="page">
-    <h1>
+<div class="container">
+    <div class="bug text-center mt-5">
+        <i class="bi bi-bug"></i>
         {{#if text}}
-        <p class="text-center" style="color: white;">{{text}}</p>
+        <div class="fs-2">{{text}}</div>
         {{else}}
-        <p class="text-center" style="color: white;">Some Internal Error Occurred Try After Sometime.</p>
+        <div class="fs-2">Internal Error Occurred. Please Try After Sometime.</div>
         {{/if}}
-    </h1>
-</section>
+    </div>
+</div>

@@ -25,7 +25,7 @@ youtube.get('/submit', (req, res) => {
                 found = true;
             }
             if (resA.data.body.hasOwnProperty("diffConverter")) {
-                audio = resV.data.body.diffConverter;
+                audio = resA.data.body.diffConverter;
             }
             for (let i = 0; i < resV.data.body.url.length; i++) {
                 if (
