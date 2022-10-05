@@ -105,6 +105,10 @@
      object-fit: contain;
      height: 200px;
  }
+ .grid div video {
+     object-fit: contain;
+     height: 200px;
+ }
 
  .bi-bug {
      font-size: 100px;
