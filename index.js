@@ -44,6 +44,8 @@ app.use('/instagram', require(path.join(__dirname, "./routes/instagram.js")));
 //-------------------------------------------------------------------------------------------------------------//
 app.use('/youtube', require(path.join(__dirname, "./routes/youtube.js")));
 //-------------------------------------------------------------------------------------------------------------//
+app.use('/twitter', require(path.join(__dirname, "./routes/twitter.js")));
+//-------------------------------------------------------------------------------------------------------------//
 app.listen(port, () => {
     console.log(`http://localhost:${port}`);
 })

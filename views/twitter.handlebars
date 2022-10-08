@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="youtube">
+        <input type="text" class="form-control" id="getUrl" placeholder="Enter twitter link...">
+        <div class="button">
+            <button id="submit" class="btn btn-primary">Submit</button>
+            <button id="reset" class="btn btn-primary">Reset</button>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById('submit').addEventListener('click', function () {
+        let dataFromUrl = document.getElementById('getUrl').value;
+        document.location.href = "/twitter/submit?q=" + dataFromUrl;
+    });
+    document.getElementById('reset').addEventListener('click', function () {
+        document.getElementById('getUrl').value = "";
+    });
+</script>

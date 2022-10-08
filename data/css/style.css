@@ -36,6 +36,10 @@
      width: 100%;
  }
 
+ .footer a {
+     text-decoration: none;
+ }
+
  .navbar a:hover {
      scale: 1.01;
  }
@@ -92,6 +96,10 @@
      height: 200px;
  }
 
+ .ytimg video {
+     margin: auto;
+     height: 200px;
+ }
 
  .bi-bug {
      color: white;

@@ -1,0 +1,14 @@
+<div class="container text-center">
+    <div class="ytimg mt-5">
+        {{#if image}}
+        <img src="{{{download}}}" alt="error" class="img-fluid">
+        {{else}}
+        <video src="{{{download}}}" controls class="img-fluid"></video>
+        {{/if}}
+    </div>
+    <div class="button">
+        <a class="me-1 btn btn-primary" href="{{{download}}}" target="_blank">
+            Download
+        </a>
+    </div>
+</div>
