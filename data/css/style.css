@@ -1,19 +1,22 @@
  * {
      margin: 0;
      padding: 0;
-     box-sizing: border-box !important;
-     color: white !important;
+     box-sizing: border-box;
  }
 
  body {
-     height: 100vh;
+     position: relative;
+     min-height: 100vh;
+     font-size: 1.2rem;
  }
 
  body::before {
      top: 0;
      left: 0;
-     background: linear-gradient(172deg, #000000 10%, #5A184E, #A23756, #DA6C53, #F8AF53);
+     background: url("https://w.wallhaven.cc/full/6o/wallhaven-6o2m5w.png");
+     filter: blur(.1em);
      background-repeat: no-repeat;
+     background-position: center center;
      background-size: cover;
      position: fixed;
      height: 110vh;
@@ -22,21 +25,17 @@
      z-index: -1;
  }
 
- .dropdown-menu a {
-     color: black !important;
- }
-
 
  .navbar div a {
-     color: white;
+     font-size: 1.2rem;
  }
 
 
  .footer {
-     background-color: black;
      position: absolute;
+     bottom: 0;
      width: 100%;
-     height: 30px;
+     padding: 2px;
  }
 
  .navbar a:hover {
@@ -45,15 +44,6 @@
 
  .container {
      height: 100%;
-     border: 5px solid green;
- }
-
- #mainbg {
-     height: 350px;
- }
-
- .container #getUrl {
-     color: black !important;
  }
 
  .youtube,
@@ -62,9 +52,6 @@
      margin: 16% auto;
  }
 
- .username span {
-     color: black !important;
- }
 
  .container .button {
      display: flex;
@@ -80,7 +67,7 @@
      width: 95%;
      margin: 10px auto;
      padding: 25px 0px;
-     grid-gap: .7rem;
+     gap: .7rem;
      justify-items: center;
  }
 
@@ -93,24 +80,19 @@
      justify-content: center;
      background-position: center center;
      box-shadow: 5px 5px 20px;
-     border: 2px solid aliceblue inset;
+     border: 2px aliceblue;
  }
 
- .image div,
- span {
-     color: white;
- }
 
- .grid div img {
-     object-fit: contain;
-     height: 200px;
- }
+ .grid div img,
  .grid div video {
      object-fit: contain;
      height: 200px;
  }
 
+
  .bi-bug {
+     color: white;
      font-size: 100px;
      font-family: monospace;
  }
@@ -123,10 +105,5 @@
      body,
      .container {
          height: auto;
-     }
-
-     #mainbg {
-        height: 70vh;
-         background-position: center center;
      }
  }

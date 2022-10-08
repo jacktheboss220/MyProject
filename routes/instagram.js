@@ -86,6 +86,7 @@ insta.get('/profile-picture/submit', (req, res) => {
             username: r.fullname
         })
     }).catch(err => {
+        console.log(err);
         return res.render("error", {
             text: "Username not Found / Internal Error"
         })
