@@ -26,7 +26,7 @@
 
 
  .navbar div a {
-     font-size: 1.2rem;
+     font-size: 1rem;
  }
 
 
@@ -34,7 +34,6 @@
      position: absolute;
      bottom: 0;
      width: 100%;
-     padding: 2px;
  }
 
  .navbar a:hover {
@@ -63,7 +62,7 @@
  .content {
      display: grid;
      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-     width: 95%;
+     width: 90%;
      margin: 10px auto;
      padding: 25px 0px;
      gap: .7rem;
@@ -80,8 +79,12 @@
      background-position: center center;
      box-shadow: 5px 5px 20px;
      border: 2px aliceblue;
+     border-radius: 2px;
  }
 
+ .grid {
+     padding: 10px 0;
+ }
 
  .grid div img,
  .grid div video {
@@ -99,10 +102,5 @@
  @media (max-width:425px) {
      .youtube {
          margin: 40% auto;
-     }
-
-     body,
-     .container {
-         height: auto;
      }
  }
