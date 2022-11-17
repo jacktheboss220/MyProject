@@ -13,6 +13,7 @@
      top: 0;
      left: 0;
      background: url("https://w.wallhaven.cc/full/6o/wallhaven-6o2m5w.png");
+     background: url("../images/background.png");
      filter: blur(.1em);
      background-repeat: no-repeat;
      background-position: center center;
