@@ -1,115 +1,148 @@
- * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
- }
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap');
 
- body {
-     position: relative;
-     min-height: 100vh;
- }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
- body::before {
-     top: 0;
-     left: 0;
-     background: url("https://w.wallhaven.cc/full/6o/wallhaven-6o2m5w.png");
-     background: url("../images/background.png");
-     filter: blur(.1em);
-     background-repeat: no-repeat;
-     background-position: center center;
-     background-size: cover;
-     position: fixed;
-     height: 110vh;
-     width: 100%;
-     content: "";
-     z-index: -1;
- }
+body {
+    position: relative;
+    min-height: 100vh;
+}
 
-
- .navbar div a {
-     font-size: 1rem;
- }
+body::before {
+    top: 0;
+    left: 0;
+    background: url("https://w.wallhaven.cc/full/6o/wallhaven-6o2m5w.png"), url("../images/background.png");
+    filter: blur(.2em) brightness(.9);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: fixed;
+    height: 110vh;
+    width: 100%;
+    content: "";
+    z-index: -1;
+}
 
 
- .footer {
-     position: absolute;
-     bottom: 0;
-     width: 100%;
- }
-
- .footer a {
-     text-decoration: none;
- }
-
- .navbar a:hover {
-     scale: 1.01;
- }
-
- .container {
-     height: 100%;
- }
-
- .youtube,
- .instagram,
- .bug {
-     margin: 16% auto;
- }
+.navbar div a {
+    font-size: 1rem;
+}
 
 
- .container .button {
-     display: flex;
-     margin: 10px auto;
-     gap: 6px;
-     justify-content: center;
- }
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    scale: 1.01;
+}
+
+.container {
+    height: 100%;
+}
+
+.youtube,
+.instagram,
+.bug {
+    margin: 16% auto;
+}
 
 
- .content {
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-     width: 90%;
-     margin: 10px auto;
-     padding: 25px 0px;
-     gap: .7rem;
-     justify-items: center;
- }
+.container .button {
+    display: flex;
+    margin: 10px auto;
+    gap: 6px;
+    justify-content: center;
+}
 
 
- .image {
-     display: flex;
-     flex-direction: column;
-     width: auto;
-     padding: 5px 0;
-     justify-content: center;
-     background-position: center center;
-     box-shadow: 5px 5px 20px;
-     border: 2px aliceblue;
-     border-radius: 2px;
- }
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    width: 90%;
+    margin: 10px auto;
+    padding: 25px 0px;
+    gap: .7rem;
+    justify-items: center;
+}
 
- .grid {
-     padding: 10px 0;
- }
 
- .grid div img,
- .grid div video {
-     object-fit: contain;
-     height: 200px;
- }
+.image {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    padding: 5px 0;
+    justify-content: center;
+    background-position: center center;
+    box-shadow: 5px 5px 20px;
+    border: 2px aliceblue;
+    border-radius: 2px;
+}
 
- .ytimg video {
-     margin: auto;
-     height: 200px;
- }
+.grid {
+    padding: 10px 0;
+}
 
- .bi-bug {
-     color: white;
-     font-size: 100px;
-     font-family: monospace;
- }
+.grid div img,
+.grid div video {
+    object-fit: contain;
+    height: 200px;
+}
 
- @media (max-width:425px) {
-     .youtube {
-         margin: 40% auto;
-     }
- }
+.ytimg video {
+    margin: auto;
+    height: 200px;
+}
+
+.bi-bug {
+    color: white;
+    font-size: 100px;
+    font-family: monospace;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+@keyframes ani {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 75%
+    }
+}
+
+.team-sam {
+    padding: 5px;
+    overflow: hidden;
+    animation: ani 5.5s ease;
+    font-size: 4rem;
+    font-family: 'Rubik Distressed', cursive;
+    color: royalblue;
+    border: 10px double gray;
+    border-radius: 20px;
+}
+
+@media (max-width:425px) {
+    .youtube {
+        margin: 40% auto;
+    }
+
+    .team-sam {
+        font-size: 2rem;
+    }
+}

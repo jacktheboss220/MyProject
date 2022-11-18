@@ -23,12 +23,10 @@ app.get('/error', (req, res) => {
 })
 //-------------------------------------------------------------------------------------------------------------//
 app.get('/data/images/:img', (req, res) => {
-    console.log(req.params.img);
     res.sendFile(path.join(__dirname, "./data/images/" + req.params.img))
 })
 //-------------------------------------------------------------------------------------------------------------//
 app.get('/download/:img', (req, res) => {
-    console.log(req.params.img);
     res.download(path.join(__dirname, "./data/images/" + req.params.img))
 })
 //-------------------------------------------------------------------------------------------------------------//
