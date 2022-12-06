@@ -1,14 +1,17 @@
 <div class="container text-center">
     <div class="ytimg">
-        <img src="{{{image}}}" class="img-fluid" alt="error">
     </div>
-    <div class="fs-6 font-monospace text-center">{{title}}</div>
+    <video controls>
+        <source src="../{{video}}" type="video/mp4">
+        Your browser does not support HTML video.
+    </video>
+    <div class="fs-6 font-monospace text-center text-white">{{title}}</div>
     <div class="button">
-        <a class="me-1 btn btn-primary" href="{{{video}}}" target="_blank">
+        <a class="me-1 btn btn-primary" href="../{{{video}}}" target="_blank">
             Video
         </a>
-        <a class="ms-1 btn btn-primary" href="{{{audio}}}" target="_blank">
+        {{!-- <a class="ms-1 btn btn-primary" href="{{{audio}}}" target="_blank">
             Audio
-        </a>
+        </a> --}}
     </div>
 </div>

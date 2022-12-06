@@ -1,8 +1,10 @@
 //-------------------------------------------------------------------------------------------------------------//
-const axios = require('axios')
 const express = require('express')
 const youtube = express.Router();
-const path = require('path')
+//-------------------------------------------------------------------------------------------------------------//
+const youtubedl = require('youtube-dl-exec')
+const getRandom = (ext) => { return `${Math.floor(Math.random() * 10000)}${ext}` };
+
 //-------------------------------------------------------------------------------------------------------------//
 youtube.get('/', (req, res) => {
     res.render('youtube');
@@ -10,58 +12,27 @@ youtube.get('/', (req, res) => {
 //-------------------------------------------------------------------------------------------------------------//
 youtube.get('/submit', (req, res) => {
     const qua = { video_link: `${req.query.q}` };
-    //-------------------------------------------------------------------------------------------------------------//
-    const querystring = require('querystring');
-    const ytUrl = "https://social-downloader-i01.herokuapp.com/api/youtube";
-    (async () => {
-        try {
-            let video, audio;
-            const resV = await axios.get(ytUrl + "/video?" + querystring.stringify(qua));
-            const resA = await axios.get(ytUrl + "/audio?" + querystring.stringify(qua));
-            let YTtitle = resV.data.body.meta.title;
-            let found = false, k;
-            if (resV.data.body.hasOwnProperty("diffConverter")) {
-                video = resV.data.body.diffConverter;
-                found = true;
-            }
-            if (resA.data.body.hasOwnProperty("diffConverter")) {
-                audio = resA.data.body.diffConverter;
-            }
-            for (let i = 0; i < resV.data.body.url.length; i++) {
-                if (
-                    resV.data.body.url[i].quality == 720
-                    && resV.data.body.url[i].no_audio == false
-                ) {
-                    if (found == false) {
-                        found = true;
-                        video = resV.data.body.url[i].url
-                    }
-                } else if
-                    (
-                    resV.data.body.url[i].quality == 360
-                    && resV.data.body.url[i].no_audio == false
-                ) {
-                    if (found == false) {
-                        k = i;
-                    }
-                }
-            }
-            if (found == false) {
-                video = resV.data.body.url[k].url
-            }
-            // return video;
-            res.render('ytRender', {
-                image: resV.data.body.thumb || resA.data.body.thumb,
-                title: YTtitle,
-                video: video,
-                audio: audio
+    try {
+        let fileDown = getRandom(".mp4");
+        youtubedl(qua.video_link, { format: 'mp4', output: "../data/video/" + fileDown }).then(() => {
+            const steam = youtubedl.exec(qua.video_link, { format: "mp4", getFilename: true });
+            steam.then((r) => {
+                res.render('ytRender', {
+                    title: r.stdout,
+                    video: fileDown,
+                });
+            }).catch(err => {
+                console.log(err);
+                res.render('error')
             })
-        } catch (err) {
+        }).catch(err => {
             console.log(err);
-            // return -1;
-            res.send("error")
-        }
-    })();
+            res.send("error");
+        })
+    } catch (err) {
+        console.log(err);
+        res.send("error");
+    }
 })
 //-------------------------------------------------------------------------------------------------------------//
 module.exports = youtube;
