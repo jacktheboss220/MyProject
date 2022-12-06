@@ -14,7 +14,7 @@ youtube.get('/submit', (req, res) => {
     const qua = { video_link: `${req.query.q}` };
     try {
         let fileDown = getRandom(".mp4");
-        youtubedl(qua.video_link, { format: 'mp4', output: "../data/video/" + fileDown }).then(() => {
+        youtubedl(qua.video_link, { format: 'mp4', output: "./data/video/" + fileDown }).then(() => {
             const steam = youtubedl.exec(qua.video_link, { format: "mp4", getFilename: true });
             steam.then((r) => {
                 res.render('ytRender', {

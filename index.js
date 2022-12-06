@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 })
 //-------------------------------------------------------------------------------------------------------------//
 app.get('/data/video/:video', (req, res) => {
-    res.sendFile(path.join(__dirname, "./" + req.params.video))
+    res.sendFile(path.join(__dirname, "./data/video/" + req.params.video))
 })
 //-------------------------------------------------------------------------------------------------------------//
 app.get('/about', (req, res) => {
@@ -34,6 +34,10 @@ app.get('/download/:img', (req, res) => {
     res.download(path.join(__dirname, "./data/images/" + req.params.img))
 })
 //-------------------------------------------------------------------------------------------------------------//
+app.get('/download/video/:video', (req, res) => {
+    res.download(path.join(__dirname, "./data/video/" + req.params.video))
+})
+//-------------------------------------------------------------------------------------------------------------//
 app.get('/data/css/:css', (req, res) => {
     res.sendFile(path.join(__dirname, "./data/css/" + req.params.css))
 })
@@ -45,8 +49,6 @@ app.get('/data/favicon_io/:fav', (req, res) => {
 app.use('/instagram', require(path.join(__dirname, "./routes/instagram.js")));
 //-------------------------------------------------------------------------------------------------------------//
 app.use('/youtube', require(path.join(__dirname, "./routes/youtube.js")));
-//-------------------------------------------------------------------------------------------------------------//
-app.use('/twitter', require(path.join(__dirname, "./routes/twitter.js")));
 //-------------------------------------------------------------------------------------------------------------//
 app.listen(port, () => {
     console.log(`http://localhost:${port}`);

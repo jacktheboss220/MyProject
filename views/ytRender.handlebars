@@ -1,14 +1,13 @@
 <div class="container text-center">
     <div class="ytimg">
+        <video controls>
+            <source src="../data/video/{{{video}}}" type="video/mp4">
+        </video>
     </div>
-    <video controls>
-        <source src="../{{video}}" type="video/mp4">
-        Your browser does not support HTML video.
-    </video>
     <div class="fs-6 font-monospace text-center text-white">{{title}}</div>
     <div class="button">
-        <a class="me-1 btn btn-primary" href="../{{{video}}}" target="_blank">
-            Video
+        <a class="me-1 btn btn-primary" href="../download/video/{{{video}}}" target="_blank">
+            Download
         </a>
         {{!-- <a class="ms-1 btn btn-primary" href="{{{audio}}}" target="_blank">
             Audio
